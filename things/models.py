@@ -5,8 +5,8 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class Thing(AbstractUser):
-    name = models.TextField(blank = False, max_length = 30, unique = True)
-    description = models.TextField(blank = True,max_length = 120)
+    name = models.CharField(blank = False, max_length = 30, unique = True)
+    description = models.TextField(max_length = 120)
     quantity = models.IntegerField(blank = False,
            validators=[ MaxValueValidator(100),
                         MinValueValidator(0)         
